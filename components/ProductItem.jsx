@@ -9,7 +9,7 @@ const ProductItem = ({ product, addToCartHandler }) => {
       <div className="flex  flex-col border  shadow-none hover:shadow-md   items-center overflow-hidden">
         <div className="card card-compact  w-[256px] h-auto bg-base-100  ">
           <figure>
-            <Link href={`/product/${product.slug}`}>
+            <Link href={`/product/${product.slug}`} passHref>
               <img
                 src={product.image}
                 alt={product.name}
@@ -19,16 +19,17 @@ const ProductItem = ({ product, addToCartHandler }) => {
             </Link>
           </figure>
           <div className="card-body">
-            <Link href={`/product/${product.slug}`}>
+            <Link href={`/product/${product.slug}`} passHref>
               <h2 className="card-title">{product.name}</h2>
             </Link>
             <Link
               href={`/product/${product.slug}`}
               className="text-slate-500 gap-1"
+              passHref
             >
               <p className="">{product.brand}</p>
             </Link>
-            <Link href={`/product/${product.slug}`}>
+            <Link href={`/product/${product.slug}`} passHref>
               <p>${product.price}</p>
             </Link>
 
